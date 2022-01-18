@@ -20,10 +20,10 @@ namespace MotoPartesErazo.Datos
         // motores de base de datos, en este caso utilizaremos MySQL.
         private DbProveedor _MotorProvedor;// objeto ENUM donde tendremos una lista de los diferentes tipos de base de datos.(se define mas abajo el tipo enum)
         private CommandType _TipoComando; // Objeto del tipo ENUM, idicamos si vamos trabajar con procedimiento almacenado o consultas planas
-        //osea como se interpresta  la propiedad  COmmandText del comando (1 = query o consulta, 4 = procedimientos almacenado, 512 = tableDirect)
+                                          //osea como se interpresta  la propiedad  COmmandText del comando (1 = query o consulta, 4 = procedimientos almacenado, 512 = tableDirect)
 
 
-            // Getters y Setters
+        // Getters y Setters
         public string CadenaDeConexion { get => _CadenaDeConexion; set => _CadenaDeConexion = value; }
         public DbConnection Conexion { get => _Conexion; set => _Conexion = value; }
         public DbCommand Comando { get => _Comando; set => _Comando = value; }
@@ -33,7 +33,25 @@ namespace MotoPartesErazo.Datos
 
 
         // Método Constructor
-        public DBHelper(string CadenaConexion, CommandType TipoComando,DbProveedor MotorDB = DBHelper.DbProveedor.MySQL )
+        public DBHelper(string CadenaConexion, CommandType TipoComando, DbProveedor MotorDB = DBHelper.DbProveedor.MySQL)
+        {
+            _MotorProvedor = MotorDB;
+
+            _TipoComando = TipoComando; // trabajamos con procedimiento almacenado
+
+            _MotorDB = MySqlClientFactory.Instance; // obtenemos todo los metodos para trabajar con MySQL
+
+            _Conexion = _MotorDB.CreateConnection();// cresmo la conexión
+
+            _Conexion.ConnectionString = CadenaConexion; // le pasamos la cadena de conexión a la conexión creada
+
+            _Comando = _MotorDB.CreateCommand(); // creamos el comando que ejecutara las sentecias en la base de dato
+
+            _Comando.Connection = _Conexion;// le indicamos al comando la conexión que utilizara.
+
+
+        }
+        public DBHelper(string CadenaConexion, DbProveedor MotorDB = DBHelper.DbProveedor.MySQL)
         {
             _MotorProvedor = MotorDB;
 
@@ -120,11 +138,11 @@ namespace MotoPartesErazo.Datos
                 }
             }
 
-            return resultado;            
+            return resultado;
         }
 
 
-        // Método co el cual obtenemos una tabla a partir de una consulta 
+        // Método con el cual obtenemos una tabla a partir de una consulta 
         public DataTable ObtenerTabla(string consulta)
         {
             DbDataAdapter adaptador = _MotorDB.CreateDataAdapter();
@@ -173,7 +191,12 @@ namespace MotoPartesErazo.Datos
 
 
 
-
+        public string estado()
+        {
+                       
+            return _Conexion.State.ToString();
+           
+        } 
 
 
 

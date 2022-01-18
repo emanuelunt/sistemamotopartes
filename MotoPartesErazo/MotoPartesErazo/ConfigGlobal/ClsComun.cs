@@ -17,11 +17,11 @@ namespace MotoPartesErazo.ConfigGlobal
         public static readonly string app = "MotoPartes";
 
 
-        public static string Servidor = "localhost";
+        public static string Servidor = "192.168.1.50";
         public static string BaseDato = "motopartedb";
-        public static string Usuario = "marcelo";
-        public static string Password = "";
-        public static string CadenaConexion = $"Server={Servidor};Database={BaseDato};User id={Usuario};pws={Password}";  // si ahy error agregar ;SSL Mode=None
+        public static string Usuario = "sebaerazo";
+        public static string Password = "seba.admin";
+        public static string CadenaConexion = $"Server={Servidor};Database={BaseDato};User id={Usuario};password={Password}";  // si ahy error agregar ;SSL Mode=None
 
 
 

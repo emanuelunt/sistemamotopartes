@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MotoPartesErazo.Datos;
+using MotoPartesErazo.ConfigGlobal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,15 @@ namespace MotoPartesErazo
 {
     public partial class Form1 : Form
     {
+        DBHelper db = new DBHelper(ClsComun.CadenaConexion);
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(db.estado());
         }
     }
 }
