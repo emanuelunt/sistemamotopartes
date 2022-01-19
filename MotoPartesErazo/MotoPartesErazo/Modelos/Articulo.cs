@@ -25,7 +25,7 @@ namespace MotoPartesErazo.Modelos
         private decimal lista1;
         private decimal lista2;
         private DateTime fecha_creado;
-        private int stock;
+       // private int stock;
         private int minimo;
         private int idImpuesto;
         private int idProveedor;
@@ -34,7 +34,7 @@ namespace MotoPartesErazo.Modelos
         private int idCodigoBarra;
         private int idRubro;
         private int descuento; // representa un porcentaje de descuento.
-        private bool estado;// enla base de guarda 0 o 1 indica si el articulo esta activo o no.
+        //private bool estado;// enla base de guarda 0 o 1 indica si el articulo esta activo o no.
         private byte[] imagen;
 
 
@@ -50,7 +50,7 @@ namespace MotoPartesErazo.Modelos
         public decimal Lista1 { get => lista1; set => lista1 = value; }
         public decimal Lista2 { get => lista2; set => lista2 = value; }
         public DateTime Fecha_creado { get => fecha_creado; set => fecha_creado = value; }
-        public int Stock { get => stock; set => stock = value; }
+        //public int Stock { get => stock; set => stock = value; }
         public int Minimo { get => minimo; set => minimo = value; }
         public int IdImpuesto { get => idImpuesto; set => idImpuesto = value; }
         public int IdProveedor { get => idProveedor; set => idProveedor = value; }
@@ -59,7 +59,7 @@ namespace MotoPartesErazo.Modelos
         public int IdCodigoBarra { get => idCodigoBarra; set => idCodigoBarra = value; }
         public int IdRubro { get => idRubro; set => idRubro = value; }
         public int Descuento { get => descuento; set => descuento = value; }
-        public bool Estado { get => estado; set => estado = value; }
+        //public bool Estado { get => estado; set => estado = value; }
         public byte[] Imagen { get => imagen; set => imagen = value; }
 
 
@@ -90,7 +90,7 @@ namespace MotoPartesErazo.Modelos
             DB.AgregarParametro("lista1_",this.Lista1);
             DB.AgregarParametro("lista2_",this.Lista2);
             DB.AgregarParametro("fecha_creado_",this.Fecha_creado);
-            DB.AgregarParametro("stock_",this.Stock);
+            //DB.AgregarParametro("stock_",this.Stock);
             DB.AgregarParametro("minimo_",this.Minimo);
             DB.AgregarParametro("idImpuesto_",this.IdImpuesto);
             DB.AgregarParametro("idProveedor_",this.IdProveedor);
@@ -99,13 +99,108 @@ namespace MotoPartesErazo.Modelos
             DB.AgregarParametro("idCodigoBarra_",this.IdCodigoBarra);
             DB.AgregarParametro("idRubro_",this.IdRubro);
             DB.AgregarParametro("descuento_",this.Descuento);
-            DB.AgregarParametro("estado_",this.Estado);
+            //DB.AgregarParametro("estado_",this.Estado);
             DB.AgregarParametro("imagen_",this.Imagen);
 
             resultado = DB.CRUD("sp_articulo_crear");
 
             return (resultado == 1 ? $"{ClsComun.FilaCreada} {entidad} " : ClsComun.NoFilasAgregada);
 
+
+        }
+
+        public string Actualizar() // actualiza registros
+        {
+            int resultado;
+
+            DB.AgregarParametro("id_",this.Id_articulo);
+
+            DB.AgregarParametro("codigo_interno_", this.Codigo_interno);
+            DB.AgregarParametro("nombre_", this.Nombre);
+            DB.AgregarParametro("descripcion_", this.Descripcion);
+            DB.AgregarParametro("modelo_", this.Modelo);
+            DB.AgregarParametro("marca_", this.Marca);
+            DB.AgregarParametro("costo_", this.Costo);
+            DB.AgregarParametro("precio_", this.Precio);
+            DB.AgregarParametro("lista1_", this.Lista1);
+            DB.AgregarParametro("lista2_", this.Lista2);
+            DB.AgregarParametro("fecha_creado_", this.Fecha_creado);
+            //DB.AgregarParametro("stock_", this.Stock);
+            DB.AgregarParametro("minimo_", this.Minimo);
+            DB.AgregarParametro("idImpuesto_", this.IdImpuesto);
+            DB.AgregarParametro("idProveedor_", this.IdProveedor);
+            DB.AgregarParametro("idUnidad_medida_", this.IdUnidad_medida);
+            DB.AgregarParametro("servicio_", this.Servicio);
+            DB.AgregarParametro("idCodigoBarra_", this.IdCodigoBarra);
+            DB.AgregarParametro("idRubro_", this.IdRubro);
+            DB.AgregarParametro("descuento_", this.Descuento);
+            //DB.AgregarParametro("estado_", this.Estado);
+            DB.AgregarParametro("imagen_", this.Imagen);
+
+            resultado = DB.CRUD("sp_articulo_actualizar");
+
+            return (resultado == 1 ? $"{ClsComun.FilaActualizada} {entidad} " : ClsComun.NoFilasActualizada);
+
+        }
+
+        public string Eliminar() // eliminar registros
+        {
+            int resultado;
+
+            DB.AgregarParametro("id_",this.Id_articulo);
+
+            resultado = DB.CRUD("sp_articulo_eliminar");
+
+            return (resultado == 1 ? $"{ClsComun.FilaEliminada} {entidad} " : ClsComun.NoFilasEliminada);
+
+        }
+
+        public DataTable Buscar(string txtbuscar)// Buscar registros
+        {
+            DB.AgregarParametro("txt_",txtbuscar);
+
+            return DB.ObtenerTabla("sp_articulo_buscar");
+
+        }
+
+        public bool HasComprobantesDetalles(int articulo_id)// Este método verifica que no exite ningun comprobante con este artículo, para poder borrar un artículo.
+        {
+            DB.AgregarParametro("id_",articulo_id);
+
+            DataTable info = DB.ObtenerTabla("sp_articulo_hasDetalles");
+
+            return (info != null && info.Rows.Count > 0 ? true : false);
+
+        }
+
+        public bool HasStock(int articulo_id)// Este método verifica que no exite ningun stock con este artículo, para poder borrar un artículo.
+        {
+            DB.AgregarParametro("id_", articulo_id);
+
+            DataTable info = DB.ObtenerTabla("sp_articulo_hasStock");
+
+            return (info != null && info.Rows.Count > 0 ? true : false);
+
+        }
+
+        public bool HasCodBarra(int articulo_id)// Este método verifica que no exite ningun codigo de barra con este artículo, para poder borrar un artículo.
+        {// se le envia el id del codigo de barra que esta en la tabla articulo osea el valor del "idcodbarra"
+            DB.AgregarParametro("id_", articulo_id);
+
+            DataTable info = DB.ObtenerTabla("sp_articulo_hasCodBarra");
+
+            return (info != null && info.Rows.Count > 0 ? true : false);
+
+        }
+
+
+        public bool ExisteArticulo(string nombre)// este método verifica que no se repita artículos.
+        {
+            DB.AgregarParametro("nombre_", nombre);
+
+            DataTable info = DB.ObtenerTabla("sp_articulo_existe");
+
+            return (info != null && info.Rows.Count > 0 ? true : false);
 
         }
 
