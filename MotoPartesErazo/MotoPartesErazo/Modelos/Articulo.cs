@@ -66,15 +66,15 @@ namespace MotoPartesErazo.Modelos
 
         /*   Métodos */
 
-        public DataTable Datos()// con este métdo obtenemos todos los datos de la tabla artículo
+        public DataTable Datos()// con este método obtenemos todos los datos de la tabla artículo y sus datos vinculados a otras tablas
         {
             return DB.ObtenerTabla("sp_articulo_datos");
         }
 
-        // Idem al métod anterior
+        // Idem al métod anterior pero solo trae los datos de la tabla artículos
         public DataTable Lista() => DB.ObtenerTabla("sp_articulos_lista");
 
-        // métdo que crea nuevos articulos
+        // método que crea nuevos articulos
         public string Crear()
         {
             int resultado;

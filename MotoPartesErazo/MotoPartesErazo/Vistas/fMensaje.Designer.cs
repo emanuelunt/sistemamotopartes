@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.etTitulo = new System.Windows.Forms.Label();
             this.etMensaje = new System.Windows.Forms.Label();
             this.pictureBoxIcono = new System.Windows.Forms.PictureBox();
-            this.etTitulo = new System.Windows.Forms.Label();
-            this.btn_close = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcono)).BeginInit();
@@ -50,6 +50,31 @@
             this.panelBarraTitulo.Size = new System.Drawing.Size(617, 30);
             this.panelBarraTitulo.TabIndex = 0;
             this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.ForeColor = System.Drawing.Color.White;
+            this.btn_close.Location = new System.Drawing.Point(585, 0);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(32, 30);
+            this.btn_close.TabIndex = 1;
+            this.btn_close.Text = "X";
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // etTitulo
+            // 
+            this.etTitulo.AutoSize = true;
+            this.etTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.etTitulo.ForeColor = System.Drawing.Color.White;
+            this.etTitulo.Location = new System.Drawing.Point(22, 9);
+            this.etTitulo.Name = "etTitulo";
+            this.etTitulo.Size = new System.Drawing.Size(106, 16);
+            this.etTitulo.TabIndex = 0;
+            this.etTitulo.Text = "Etiqueta de titulo";
             // 
             // etMensaje
             // 
@@ -75,31 +100,6 @@
             this.pictureBoxIcono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcono.TabIndex = 1;
             this.pictureBoxIcono.TabStop = false;
-            // 
-            // etTitulo
-            // 
-            this.etTitulo.AutoSize = true;
-            this.etTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.etTitulo.ForeColor = System.Drawing.Color.White;
-            this.etTitulo.Location = new System.Drawing.Point(22, 9);
-            this.etTitulo.Name = "etTitulo";
-            this.etTitulo.Size = new System.Drawing.Size(106, 16);
-            this.etTitulo.TabIndex = 0;
-            this.etTitulo.Text = "Etiqueta de titulo";
-            // 
-            // btn_close
-            // 
-            this.btn_close.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.ForeColor = System.Drawing.Color.White;
-            this.btn_close.Location = new System.Drawing.Point(585, 0);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(32, 30);
-            this.btn_close.TabIndex = 1;
-            this.btn_close.Text = "X";
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // panel1
             // 

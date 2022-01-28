@@ -59,13 +59,28 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Articulo.cs" />
+    <Compile Include="Modelos\articulo_x_cod_barra.cs" />
+    <Compile Include="Modelos\Impuesto.cs" />
+    <Compile Include="Modelos\Proveedor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vistas\fMensajes.cs">
+    <Compile Include="Vistas\fArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\fMensajes.Designer.cs">
-      <DependentUpon>fMensajes.cs</DependentUpon>
+    <Compile Include="Vistas\fArticulos.Designer.cs">
+      <DependentUpon>fArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\fConfirmar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\fConfirmar.Designer.cs">
+      <DependentUpon>fConfirmar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\fMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\fMensaje.Designer.cs">
+      <DependentUpon>fMensaje.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -79,8 +94,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vistas\fMensajes.resx">
-      <DependentUpon>fMensajes.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\fArticulos.resx">
+      <DependentUpon>fArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\fConfirmar.resx">
+      <DependentUpon>fConfirmar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\fMensaje.resx">
+      <DependentUpon>fMensaje.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

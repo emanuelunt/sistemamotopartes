@@ -23,7 +23,7 @@ namespace MotoPartesErazo.Vistas
         {
             InitializeComponent();
            
-            this.Padding = new Padding(3); // padin del formulario para darle sensacion de borde
+            this.Padding = new Padding(3); // paddin del formulario para darle sensacion de borde
             this.BackColor = Color.CornflowerBlue;
 
 
@@ -98,6 +98,14 @@ namespace MotoPartesErazo.Vistas
             chat, error, advertencia, informacion, consulta
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fConfirmar ventana = new fConfirmar("Eliminar");
+
+            DialogResult resultado = ventana.ShowDialog();
+
+            MessageBox.Show(resultado.ToString());
+
+        }
     }
 }

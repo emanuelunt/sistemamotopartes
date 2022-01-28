@@ -18,7 +18,7 @@ namespace MotoPartesErazo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Application.Run(new fMensajes("Hola","advertencia", fMensajes.TipoIcono.consulta));
+            Application.Run(new fArticulos());
         }
     }
 }
