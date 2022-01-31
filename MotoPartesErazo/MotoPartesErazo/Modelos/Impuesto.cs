@@ -39,12 +39,12 @@ namespace MotoPartesErazo.Modelos
 
         /*   Métodos */
 
-        public DataTable Datos()// con este método obtenemos todos los datos de la tabla impuesto
+        public DataTable Datos()// con este método obtenemos todos los datos de la tabla impuesto y sus realciones
         {
             return DB.ObtenerTabla("sp_impuesto_datos");
         }
 
-        // Idem al método anterior
+        // Idem al método anterior lista los registros de la tabla impuesto
         public DataTable Lista() => DB.ObtenerTabla("sp_impuesto_lista");
 
         // método que crea nuevos Impuestos
@@ -125,7 +125,6 @@ namespace MotoPartesErazo.Modelos
             DataTable info = DB.ObtenerTabla("sp_impuesto_existe");
 
             return (info != null && info.Rows.Count > 0 ? true : false);
-
         }
     }
 }
