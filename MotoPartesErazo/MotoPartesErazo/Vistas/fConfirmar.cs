@@ -33,5 +33,10 @@ namespace MotoPartesErazo.Vistas
         {
             this.Close();
         }
+
+        private void btn_Si_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

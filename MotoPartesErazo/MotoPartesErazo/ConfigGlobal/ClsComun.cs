@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MotoPartesErazo.Vistas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MotoPartesErazo.Vistas.fMensajes;
 
 namespace MotoPartesErazo.ConfigGlobal
 {
@@ -35,7 +37,13 @@ namespace MotoPartesErazo.ConfigGlobal
         public static readonly string FilaEliminada   = "Se eliminó correctamente el registro de la tabla";
         public static readonly string FilaActualizada = "Se actualizó correctamente el registro en la tabla";
 
-         
+
+
+        public static void Mensaje(string mensaje, string titulo, TipoIcono icono)
+        {
+            fMensajes ventana = new fMensajes(mensaje,titulo,icono);
+            ventana.ShowDialog();
+        }
 
 
     }

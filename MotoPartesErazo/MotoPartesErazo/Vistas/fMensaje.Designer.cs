@@ -34,6 +34,7 @@
             this.etMensaje = new System.Windows.Forms.Label();
             this.pictureBoxIcono = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Si = new System.Windows.Forms.Button();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcono)).BeginInit();
             this.panel1.SuspendLayout();
@@ -47,7 +48,7 @@
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(617, 30);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(503, 30);
             this.panelBarraTitulo.TabIndex = 0;
             this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
             // 
@@ -57,7 +58,7 @@
             this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.ForeColor = System.Drawing.Color.White;
-            this.btn_close.Location = new System.Drawing.Point(585, 0);
+            this.btn_close.Location = new System.Drawing.Point(471, 0);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(32, 30);
             this.btn_close.TabIndex = 1;
@@ -83,7 +84,7 @@
             this.etMensaje.Cursor = System.Windows.Forms.Cursors.Default;
             this.etMensaje.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.etMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.etMensaje.Location = new System.Drawing.Point(119, 35);
+            this.etMensaje.Location = new System.Drawing.Point(85, 23);
             this.etMensaje.Name = "etMensaje";
             this.etMensaje.Padding = new System.Windows.Forms.Padding(5, 5, 10, 15);
             this.etMensaje.Size = new System.Drawing.Size(159, 37);
@@ -94,7 +95,7 @@
             // pictureBoxIcono
             // 
             this.pictureBoxIcono.InitialImage = null;
-            this.pictureBoxIcono.Location = new System.Drawing.Point(25, 30);
+            this.pictureBoxIcono.Location = new System.Drawing.Point(12, 6);
             this.pictureBoxIcono.Name = "pictureBoxIcono";
             this.pictureBoxIcono.Size = new System.Drawing.Size(67, 67);
             this.pictureBoxIcono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,19 +105,34 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel1.Controls.Add(this.btn_Si);
             this.panel1.Controls.Add(this.pictureBoxIcono);
             this.panel1.Controls.Add(this.etMensaje);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(617, 129);
+            this.panel1.Size = new System.Drawing.Size(503, 129);
             this.panel1.TabIndex = 2;
+            // 
+            // btn_Si
+            // 
+            this.btn_Si.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Si.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.btn_Si.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Si.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Si.ForeColor = System.Drawing.Color.White;
+            this.btn_Si.Location = new System.Drawing.Point(194, 83);
+            this.btn_Si.Name = "btn_Si";
+            this.btn_Si.Size = new System.Drawing.Size(109, 34);
+            this.btn_Si.TabIndex = 3;
+            this.btn_Si.Text = "Aceptar";
+            this.btn_Si.UseVisualStyleBackColor = false;
             // 
             // fMensajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 159);
+            this.ClientSize = new System.Drawing.Size(503, 159);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -143,5 +159,6 @@
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label etTitulo;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_Si;
     }
 }

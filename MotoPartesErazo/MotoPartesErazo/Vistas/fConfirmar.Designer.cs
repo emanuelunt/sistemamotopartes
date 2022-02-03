@@ -33,10 +33,10 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.etTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_No = new System.Windows.Forms.Button();
+            this.btn_Si = new System.Windows.Forms.Button();
             this.pictureBoxIcono = new System.Windows.Forms.PictureBox();
             this.etMensaje = new System.Windows.Forms.Label();
-            this.btn_Si = new System.Windows.Forms.Button();
-            this.btn_No = new System.Windows.Forms.Button();
             this.panelBarraTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcono)).BeginInit();
@@ -91,6 +91,35 @@
             this.panel1.Size = new System.Drawing.Size(547, 149);
             this.panel1.TabIndex = 3;
             // 
+            // btn_No
+            // 
+            this.btn_No.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_No.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_No.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_No.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_No.ForeColor = System.Drawing.Color.White;
+            this.btn_No.Location = new System.Drawing.Point(338, 92);
+            this.btn_No.Name = "btn_No";
+            this.btn_No.Size = new System.Drawing.Size(96, 34);
+            this.btn_No.TabIndex = 3;
+            this.btn_No.Text = "NO";
+            this.btn_No.UseVisualStyleBackColor = false;
+            // 
+            // btn_Si
+            // 
+            this.btn_Si.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Si.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.btn_Si.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Si.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Si.ForeColor = System.Drawing.Color.White;
+            this.btn_Si.Location = new System.Drawing.Point(131, 92);
+            this.btn_Si.Name = "btn_Si";
+            this.btn_Si.Size = new System.Drawing.Size(96, 34);
+            this.btn_Si.TabIndex = 2;
+            this.btn_Si.Text = "SI";
+            this.btn_Si.UseVisualStyleBackColor = false;
+            this.btn_Si.Click += new System.EventHandler(this.btn_Si_Click);
+            // 
             // pictureBoxIcono
             // 
             this.pictureBoxIcono.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcono.Image")));
@@ -117,34 +146,6 @@
             this.etMensaje.TabIndex = 0;
             this.etMensaje.Text = "¿Confirma eliminar el registro?";
             this.etMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btn_Si
-            // 
-            this.btn_Si.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_Si.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btn_Si.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Si.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Si.ForeColor = System.Drawing.Color.White;
-            this.btn_Si.Location = new System.Drawing.Point(131, 92);
-            this.btn_Si.Name = "btn_Si";
-            this.btn_Si.Size = new System.Drawing.Size(96, 34);
-            this.btn_Si.TabIndex = 2;
-            this.btn_Si.Text = "SI";
-            this.btn_Si.UseVisualStyleBackColor = false;
-            // 
-            // btn_No
-            // 
-            this.btn_No.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_No.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btn_No.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_No.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_No.ForeColor = System.Drawing.Color.White;
-            this.btn_No.Location = new System.Drawing.Point(338, 92);
-            this.btn_No.Name = "btn_No";
-            this.btn_No.Size = new System.Drawing.Size(96, 34);
-            this.btn_No.TabIndex = 3;
-            this.btn_No.Text = "NO";
-            this.btn_No.UseVisualStyleBackColor = false;
             // 
             // fConfirmar
             // 
