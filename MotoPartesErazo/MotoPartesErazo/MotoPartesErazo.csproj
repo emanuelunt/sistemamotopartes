@@ -61,8 +61,12 @@
     </Compile>
     <Compile Include="Modelos\Articulo.cs" />
     <Compile Include="Modelos\articulo_x_cod_barra.cs" />
+    <Compile Include="Modelos\Condicion_iva.cs" />
     <Compile Include="Modelos\Impuesto.cs" />
+    <Compile Include="Modelos\Localidad.cs" />
+    <Compile Include="Modelos\Pais.cs" />
     <Compile Include="Modelos\Proveedor.cs" />
+    <Compile Include="Modelos\Provincia.cs" />
     <Compile Include="Modelos\Rubro.cs" />
     <Compile Include="Modelos\Tipo_iva.cs" />
     <Compile Include="Modelos\Unidade_medida.cs" />
